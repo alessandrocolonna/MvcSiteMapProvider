@@ -728,10 +728,6 @@ namespace MvcSiteMapProvider
             if (!this.Clickable)
                 return false;
 
-            // If URL is set explicitly, we should never match based on route values.
-            if (!string.IsNullOrEmpty(this.UnresolvedUrl))
-                return false;
-
             // Check whether the configured host name matches (only if it is supplied).
             if (!string.IsNullOrEmpty(this.HostName) && !this.urlPath.IsPublicHostName(this.HostName, this.HttpContext))
                 return false;
